@@ -98,6 +98,14 @@ class Term extends AbstractJsonSerializableModel
 
     public function jsonSerialize(): array
     {
-        return get_object_vars($this);
+        $vars = get_object_vars($this);
+
+        foreach ($vars as $key => $data){
+            if($data === null) {
+                unset($vars[$key]);
+            }
+        }
+
+        return $vars;
     }
 }

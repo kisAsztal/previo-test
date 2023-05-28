@@ -5,13 +5,13 @@ namespace PrevioTest\Model;
 class Price extends AbstractJsonSerializableModel
 {
     private string $currency;
-    private float $price;
+    private string $price;
 
     /**
      * @param string $currency
-     * @param float $price
+     * @param string $price
      */
-    public function __construct(string $currency, float $price)
+    public function __construct(string $currency, string $price)
     {
         $this->currency = $currency;
         $this->price = $price;
@@ -36,18 +36,18 @@ class Price extends AbstractJsonSerializableModel
     }
 
     /**
-     * @return float
+     * @return string
      */
-    public function getPrice(): float
+    public function getPrice(): string
     {
         return $this->price;
     }
 
     /**
-     * @param float $price
+     * @param string $price
      * @return Price
      */
-    public function setPrice(float $price): Price
+    public function setPrice(string $price): Price
     {
         $this->price = $price;
         return $this;
